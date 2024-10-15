@@ -2,11 +2,12 @@
 """async"""
 import random
 import asyncio
+import typing
 
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-async def wait_n(n, max_delay: int) -> list[float]:
+async def wait_n(n: int, max_delay: int) -> typing.List[float]:
     """asyncs maxdelay n times"""
     tasks = [asyncio.create_task(wait_random(max_delay)) for _ in range(n)]
     delays = await asyncio.gather(*tasks)
