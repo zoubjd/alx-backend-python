@@ -2,9 +2,10 @@
 """async"""
 import asyncio
 import random
+import typing
 
 
-async def async_generator():
+async def async_generator() -> typing.Generator[float, NoneType, NoneType]:
     """yield"""
     for i in range(10):
         await asyncio.sleep(1)
